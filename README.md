@@ -1,2 +1,2 @@
 basic calculator built using React.js
-https://muhamedsafwat.github.io/React-Calculator/
+you can preview form [Here](https://react-calculator-olive.vercel.app/)
