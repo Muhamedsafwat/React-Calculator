@@ -19,10 +19,12 @@ function App() {
   };
   const [calc, setCalc] = useState("");
   const ops = ["/", "*", "+", "-", "."];
+
   const updateClac = (value) => {
     if (
       (ops.includes(value) && calc === "") ||
-      (ops.includes(value) && ops.includes(calc.slice(-1)))
+      (ops.includes(value) && ops.includes(calc.slice(-1))) ||
+      (calc.includes(".") && value === ".")
     ) {
       return;
     }
@@ -40,6 +42,7 @@ function App() {
     const undoed = calc.slice(0, -1);
     setCalc(undoed);
   };
+
   const ac = () => {
     setCalc("");
   };
@@ -81,13 +84,11 @@ function App() {
             -
           </button>
           <button onClick={undo} className="op">
-            {" "}
             DEL
           </button>
           <button onClick={ac} className="op">
             AC
           </button>
-
           {createDigits()}
           <button
             onClick={() => {
